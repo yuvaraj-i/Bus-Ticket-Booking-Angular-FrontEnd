@@ -1,2 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
-@import "./dist/globals"
+@import "./dist/globals";
+
+* {
+    margin: 0;
+}
+
+body {
+    font-family: $font;
+    font-size: 1rem;
+    line-height: 1.75rem;
+    background-color: $grey-color;
+}

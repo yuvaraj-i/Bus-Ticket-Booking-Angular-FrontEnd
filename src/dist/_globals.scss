@@ -1,2 +1,13 @@
 @import "./colors";
 @import "./typography";
+
+
+@mixin navigation {
+    background-color: $white-color;
+    color: $black-color;
+    font-size: 0.87rem;
+    font-weight: 600;
+    border-radius: 4px;
+    border: 2px solid black;
+    padding: 8px;
+}

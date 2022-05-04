@@ -1,0 +1,27 @@
+@import "../../../dist/globals";
+
+nav {
+    display: flex;
+    padding: 12px;
+    justify-content: space-between;
+    background-color: $black-color;
+    position: sticky;
+    top: 0;
+
+    a {
+        color: $green-color;
+        padding: 4px;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    a:hover{
+        cursor: pointer;
+    }
+    
+    div {
+        display: flex;
+        gap: 12px;
+    }
+
+}

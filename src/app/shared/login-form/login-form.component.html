@@ -1,0 +1,21 @@
+<div class="outer-container">
+    <h2 class="align-center">Login</h2>
+
+    <form novalidate #loginForm = "ngForm" autocomplete="off">
+        <label for="mobile-number">Mobile Number</label>
+        <input id="mobile-number" type="tel" name="number" placeholder="e:g: 9876543210" ngModel>
+        <!-- <div id="mobile-error-message">
+            <span><img src="./asserts/icons8-alert-16.png"/></span>
+            <div>mobile number should be only ten digits</div>
+        </div> -->
+        <label for="password">Password</label>
+        <input id = "password" type="password" name="password" placeholder="e:g: password" ngModel>
+        <!-- <div id="password-error-message">
+            <span><img src="./asserts/icons8-alert-16.png"/></span>
+            <div>mobile number should be only ten digits</div>
+        </div> -->
+        <button type="submit">Login</button>
+    </form>
+    
+    <p class="align-center">Don't have an account? <a> Sign up</a></p>
+</div>

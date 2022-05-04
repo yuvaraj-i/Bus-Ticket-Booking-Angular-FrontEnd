@@ -1,0 +1,63 @@
+@import "../../../dist/globals";
+
+.outer-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.align-center {
+    text-align: center;
+    padding: 8px;
+    margin: 24px;
+}
+
+h2 {
+    font-size: 1.8em;
+    font-weight: 545;
+}
+
+p {
+    font-size: 1.2em;
+
+    a {
+        color: $green-color;
+        margin-left: 6px;
+    }
+
+    a:hover {
+        cursor: pointer;
+        border-bottom: 1px dotted $black-color;
+    }
+
+}
+
+form {
+    display: flex;
+    border: 1px solid $black-color;
+    flex-direction: column;
+    padding: 24px;
+    row-gap: 8px;
+    background-color: $white-color;
+
+    label{
+        font-size: 1.2em;
+    }
+
+    input {
+        padding: 8px;
+        margin-bottom: 12px;
+    }
+
+    button {
+        font-size: 1em;
+        padding: 8px;
+        background-color: $green-color;
+        border: none;
+        color: $white-color;
+        font-weight: 400;
+    }
+
+    button:hover{
+        cursor: pointer;
+    }
+}      

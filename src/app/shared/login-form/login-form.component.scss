@@ -1,63 +1,105 @@
 @import "../../../dist/globals";
 
-.outer-container{
-    display: flex;
-    flex-direction: column;
-}
-
 .align-center {
     text-align: center;
     padding: 8px;
-    margin: 24px;
+    margin: 1rem;
 }
 
-h2 {
-    font-size: 1.8em;
-    font-weight: 545;
-}
-
-p {
-    font-size: 1.2em;
-
-    a {
-        color: $green-color;
-        margin-left: 6px;
-    }
-
-    a:hover {
-        cursor: pointer;
-        border-bottom: 1px dotted $black-color;
-    }
-
-}
-
-form {
+.outer-container{
     display: flex;
-    border: 1px solid $black-color;
     flex-direction: column;
-    padding: 24px;
-    row-gap: 8px;
-    background-color: $white-color;
+    padding: 1.4rem;
+    margin-left: 7%;
+    margin-right: 7%;
 
-    label{
+    
+    h2 {
+        @extend .align-center;
+        font-size: 1.8em;
+        font-weight: 545;
+    }
+    
+    p {
+        @extend .align-center;
         font-size: 1.2em;
+    
+        a {
+            color: $green-color;
+            margin-left: 6px;
+            padding: 6px;
+            text-decoration: none;
+        }
+    
+        a:hover {
+            cursor: pointer;
+            border-bottom: 1px dotted $black-color;
+        }
+    
     }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        justify-content: space-around;
+        background-color: $white-color;
+    
+        label{
+            font-size: 1.2em;
+            font-weight: 400;
+            padding-top: 0.2em;
+        }
+    
+        input {
+            padding: 8px;
+            margin-top: 0.5rem;
+            margin-bottom: 0.6rem;
+        }
+    
+        button {
+            font-size: 1em;
+            padding: 0.5rem;
+            margin-top: 2rem;
+            background-color: $green-color;
+            border: none;
+            color: $white-color;
+            font-weight: 400;
+        }
+    
+        button:hover{
+            cursor: pointer;
+        }
 
-    input {
-        padding: 8px;
-        margin-bottom: 12px;
-    }
+        #error-message{
+            display: flex;
+            gap: 8px;
+            line-height: normal;
 
-    button {
-        font-size: 1em;
-        padding: 8px;
-        background-color: $green-color;
-        border: none;
-        color: $white-color;
-        font-weight: 400;
+            div {
+                font-size: 13px;
+                color: $red-color;
+            }
+        }
     }
+}
+      
 
-    button:hover{
-        cursor: pointer;
+@media screen and (max-width: 676px) {
+    .outer-container {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0.5rem;
+
+        form {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        p {
+            margin: 0;
+            font-size: 0.7em;
+        }
+
     }
-}      
+}

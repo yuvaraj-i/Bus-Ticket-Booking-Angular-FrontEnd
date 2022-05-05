@@ -2,19 +2,23 @@
 
 .container{
     // display: flex;
-    // flex-direction: column;
-    padding: 24px;
+    padding: 1rem;
+    padding-top: 0.5rem;
+    // justify-content:center;
+    // gap: 1rem;
 
     .travel-image{
-        margin-right: 16px;
+        margin-top: 15vh;
+        margin-bottom: auto;
         float: left;
-        border: 1px solid $grey-color;
-        max-width: 40vw;
-        height: 53vh;
+        // flex-wrap: wrap;
+        max-width: 35vw;
+        // height: 53vh;
+        padding: 16px;
     }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 676px) {
     .travel-image {
         display: none;
     }

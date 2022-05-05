@@ -1,21 +1,28 @@
 <div class="outer-container">
     <h2 class="align-center">Login</h2>
 
-    <form novalidate #loginForm = "ngForm" autocomplete="off">
+    <form novalidate #loginDetails = "ngForm" autocomplete="off" (ngSubmit)="submitFormDetails(loginDetails)">
         <label for="mobile-number">Mobile Number</label>
-        <input id="mobile-number" type="tel" name="number" placeholder="e:g: 9876543210" ngModel>
-        <!-- <div id="mobile-error-message">
-            <span><img src="./asserts/icons8-alert-16.png"/></span>
-            <div>mobile number should be only ten digits</div>
-        </div> -->
+        <input id="mobile-number" type="tel" name="mobileNumber" placeholder="e:g: 9876543210" minlength="10" #number = "ngModel" required ngModel>
+        <div id="error-message" *ngIf="number.invalid && number.touched || mobileErrorStatus">
+            <!-- mobileErrorStatus = false; -->
+            <span *ngIf="number.invalid"><img src="../../../assets/icons8-alert-16.png"/></span>
+            <div *ngIf="number.hasError('required')">mobile number can not be empty</div>
+            <div *ngIf="number.hasError('minlength')">mobile number should be ten digits</div>
+            <!-- <div *ngIf="!number.hasError('required') && !number.hasError('minlength') && number.hasError('pattern')">mobile number should be only in digits</div> -->
+
+            <!-- <pre>{{[number.errors.attern, number.invalid, number.touched]}}</pre> -->
+        </div>
+
         <label for="password">Password</label>
-        <input id = "password" type="password" name="password" placeholder="e:g: password" ngModel>
-        <!-- <div id="password-error-message">
-            <span><img src="./asserts/icons8-alert-16.png"/></span>
-            <div>mobile number should be only ten digits</div>
-        </div> -->
+        <input id = "password" type="password" name="password" placeholder="e:g: password" #password = "ngModel" required ngModel>
+        <div id="error-message" *ngIf="password.invalid && password.touched || passwordErrorStatus">
+            <span *ngIf="password.invalid"><img src="../../../assets/icons8-alert-16.png"/></span>
+            <div *ngIf="password.hasError('required')">password can not be empty</div>
+
+        </div>
         <button type="submit">Login</button>
     </form>
     
-    <p class="align-center">Don't have an account? <a> Sign up</a></p>
+    <p class="align-center">Don't have an account? <a routerLink = "/signup">Sign up</a></p>
 </div>

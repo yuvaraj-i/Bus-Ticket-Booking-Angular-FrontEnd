@@ -1,0 +1,53 @@
+<div class="container">
+    <h2>Create your account</h2>
+
+    <form novalidate #signUpForm = "ngForm" autocomplete="off" (ngSubmit)="displayFormDetails(signUpForm)">
+        <label for="name">Name</label>
+        <input id="name" type="text" name="userName" placeholder="e:g: jhon" ngModel>
+        <!-- <div id="name-error-message">
+            <span><img src="./asserts/icons8-alert-16.png"/></span>
+            <div>mobile number should be only ten digits</div>
+        </div> -->
+
+        <label for="name">Contact Number</label>
+        <input id="mobile-number" type="tel" name="number" placeholder="e:g: 9876543210" ngModel>
+        <!-- <div id="mobile-error-message">
+            <span><img src="./asserts/icons8-alert-16.png"/></span>
+            <div>mobile number should be only ten digits</div>
+        </div> -->
+
+        <label for="name">Email</label>
+        <input id="email" type="email" name="email" placeholder="e:g: jhon@gmail.com" ngModel>
+        <!-- <div id="email-error-message">
+            <span><img src="./asserts/icons8-alert-16.png"/></span>
+            <div>mobile number should be only ten digits</div>
+        </div> -->
+
+        <label for="date-of-birth">Date Of Birth</label>
+        <input id="date-of-birth" type="date" name="dateOfBirth" ngModel>
+        <!-- <div id="date-error-message">
+            <span><img src="./asserts/icons8-alert-16.png"/></span>
+            <div>mobile number should be only ten digits</div>
+        </div> -->
+
+        <label for="password">Password</label>
+        <input id = "password" type="password" name="password" placeholder="e:g: password" ngModel>
+        <!-- <div id="password-error-message">
+            <span><img src="./asserts/icons8-alert-16.png"/></span>
+            <div>mobile number should be only ten digits</div>
+        </div> -->
+
+        <label for="confirm-password">Confirm Password</label>
+        <input id = "confirm-password" type="password" name="confirmPassword" placeholder="same as above" ngModel>
+        <!-- <div id="confirm-password-error-message">
+            <span><img src="./asserts/icons8-alert-16.png"/></span>
+            <div>mobile number should be only ten digits</div>
+        </div> -->
+
+        <button type="submit">Sign up</button>
+    </form>
+
+    <p>Already have an account?<a routerLink = "/login">Login</a></p>
+
+</div>
+

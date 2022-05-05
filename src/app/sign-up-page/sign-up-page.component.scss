@@ -1,0 +1,23 @@
+
+
+.outer-container {
+    // display: flex;
+    // flex-direction: row;
+    padding: 24px;
+
+    .person-image {
+        padding: 20px;
+        margin: auto;
+        margin-right: 16px;
+        float: left;
+        max-width: 40vw;
+        height: 53vh;
+    }
+}
+
+
+@media screen and (max-width: 676px) {
+    .person-image {
+        display: none;
+    }
+}

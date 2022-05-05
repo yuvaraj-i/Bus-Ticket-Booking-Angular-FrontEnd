@@ -14,16 +14,14 @@ export class LoginFormComponent implements OnInit {
   constructor() { }
 
   submitFormDetails(loginDetails:NgForm){
-    if(loginDetails.valid){
-      console.log(loginDetails.value);
-      loginDetails.value.mobileNumber = loginDetails.value.mobileNumber.trim();
-      console.log(loginDetails.value);
-    }
-
-    else{
+    if(loginDetails.invalid){
       this.mobileErrorStatus = true;
       this.passwordErrorStatus = true;
+      return
     }
+    
+    loginDetails.value.mobileNumber = loginDetails.value.mobileNumber.trim();
+    console.log(loginDetails.value);
   }
   
   ngOnInit(): void {

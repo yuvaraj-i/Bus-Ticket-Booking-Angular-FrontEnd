@@ -1,0 +1,41 @@
+<div class="container">
+    <!-- <h2>Bus Ticket Booking</h2> -->
+
+<form #searchLocations = "ngForm" (ngSubmit)="submitSearchDetails(searchLocations)">
+    <label for="from">from</label>
+    <input id = "form" type="search" name = "boardingLocation" placeholder="select boarding" list="locationList" #from = "ngModel" required ngModel>
+    <div class="error-message" *ngIf="from.touched || boardingError">
+        <span *ngIf="from.invalid"><img src="../../../assets/icons8-alert-16.png"/></span>
+        <div *ngIf="from.hasError('required')">boarding location can not be empty</div>
+    </div>
+
+    <label for="to">to</label>
+    <input id = "to" type="search" name = "destinationLocation" placeholder="select destination" list="locationList" #to = "ngModel" required ngModel>
+    <div class="error-message" *ngIf="to.touched || destinationError">
+        <span *ngIf="to.invalid"><img src="../../../assets/icons8-alert-16.png"/></span>
+        <div *ngIf="to.hasError('required')">destination location can not be empty</div>
+    </div>
+
+    <label for="to">travel date</label>
+    <input id = "to" type="date" name = "boardingDate" placeholder="date" #date = "ngModel" required ngModel>
+    <div class="error-message" *ngIf="date.touched">
+        <span *ngIf="date.invalid"><img src="../../../assets/icons8-alert-16.png"/></span>
+        <div *ngIf="date.hasError('required')">date can not be empty</div>
+    </div>
+
+    <button>Search Bus</button>
+</form>
+
+<datalist id="locationList">
+    <option value="option 1"></option>
+    <option value="option 1"></option>
+    <option value="option 1"></option>
+    <option value="option 1"></option>
+    <option value="option 1"></option>
+    <option value="option 1"></option>
+    <option value="option 1"></option>
+</datalist> 
+
+</div>
+
+   

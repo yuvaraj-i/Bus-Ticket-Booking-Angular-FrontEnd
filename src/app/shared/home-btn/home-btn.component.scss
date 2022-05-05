@@ -1,0 +1,19 @@
+@import "../../../dist/globals";
+
+div {
+    align-self: center;
+}
+
+
+a {
+    color: $green-color;
+    padding: 1rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-decoration: none;
+    align-self: center;
+}
+
+a:hover {
+    cursor: pointer;
+}

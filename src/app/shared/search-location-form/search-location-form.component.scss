@@ -1,0 +1,68 @@
+@import "../../../dist/globals";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 2.5em;
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6em;
+        align-self: center;
+        background-color: $white-color;
+        // max-width: fit-content;
+        border: 1px solid $grey-color;
+        width: 45vw;
+        padding: 1em;
+        border-radius: 0.3rem;
+
+        input[type="search"] {
+            padding: 0.5em;
+        }
+
+        input[type="date"]{
+            padding: 0.5em;
+        }
+
+        label {
+            font-size: 1.02em;
+            font-weight: 550;
+        }
+
+        button {
+            width: fit-content;
+            font-size: 1.02em;
+            padding: 0.5rem;
+            margin-top: 2rem;
+            background-color: $green-color;
+            border: none;
+            color: $white-color;
+            font-weight: 400;
+            align-self: start;
+            border: 1px solid $white-color;
+            border-radius: 0.3em;
+
+        }
+
+        button:hover{
+            cursor: pointer;
+        }
+
+        button:active {
+            border: 1px dotted $white-color;
+        }
+    }
+
+    .error-message{
+        display: flex;
+        gap: 8px;
+        line-height: normal;
+
+        div {
+            font-size: 13px;
+            color: $red-color;
+        }
+    }
+
+}

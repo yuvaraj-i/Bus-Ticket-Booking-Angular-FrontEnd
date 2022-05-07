@@ -12,6 +12,14 @@ export class SignUpFormComponent implements OnInit {
 
   displayFormDetails(SignUpForm:NgForm){
     console.log(SignUpForm.value);
+
+
+    // loginDetails.resetForm();
+    // this.setErrorStatus(false, false);
+  }
+
+  setErrorStatus(arg0: boolean, arg1: boolean) {
+    throw new Error('Method not implemented.');
   }
 
   ngOnInit(): void {

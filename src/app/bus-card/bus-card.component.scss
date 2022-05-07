@@ -1,0 +1,98 @@
+@import "../../dist/globals";
+
+.container {
+    display: flex;
+}
+
+.font-bold {
+    font-weight: 550;
+}
+
+.font-name {
+    color: $light-grey-color;
+    font-size: 1rem;
+}
+
+.bus-card{
+    padding: 0.5rem;
+    border: 1px solid $grey-color;
+    box-sizing: border-box;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    .item-1{
+        @extend .container;
+        gap: 0.4rem;
+        justify-content: space-between;
+        align-self: center;
+        
+        .currency-inr {
+            align-self: center;
+        }
+    }
+    
+    .item-2{
+        @extend .container;
+        padding: 0.5rem;
+        padding-left: 0;
+       
+        p {
+            align-self: center;
+            font-weight: 600;
+            font-size: 1em;
+        }
+        
+        img {
+            align-self: center;
+            padding-right: 0.2rem;
+
+        }
+        
+        .arrow {
+            padding: 0.45rem;
+
+        }
+    }
+
+    .details {
+        @extend .container;
+        justify-content: space-between;   
+        padding-top: 0.5rem;   
+        
+        button {
+            padding: 0.5rem;
+            background-color: $green-color;
+            border: none;
+            color: $white-color;
+            font-weight: 500;
+            border-radius: 0.35rem;
+            border: 1px solid $white-color;
+    
+        }
+    
+        button:hover{
+            cursor: pointer;
+            background-color: $navy-light-blue;
+        }
+
+    }
+
+    hr {
+        margin-top: 0.4rem;
+        margin-bottom: 0.4rem;
+        border: 0.1px solid $grey-color;
+    }
+
+}
+
+
+@media screen and (max-width: 676px) {
+    .font-name {
+        font-size: 0.75em;
+    }
+
+    .item-2 {
+        font-size: 0.65em;
+    }
+}
+

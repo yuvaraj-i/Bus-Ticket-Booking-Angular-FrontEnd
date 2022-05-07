@@ -9,6 +9,8 @@ import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { HomePageNavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { FormsModule } from '@angular/forms';
+import { BusListDisplayPageComponent } from './bus-list-display-page/bus-list-display-page.component';
+import { BusCardComponent } from './bus-card/bus-card.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { FormsModule } from '@angular/forms';
     LoginPageComponent,
     SignUpPageComponent,
     HomePageComponent,
-    HomePageNavBarComponent
+    HomePageNavBarComponent,
+    BusListDisplayPageComponent,
+    BusCardComponent
   ],
 
   imports: [

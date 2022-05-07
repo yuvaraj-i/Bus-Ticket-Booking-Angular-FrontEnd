@@ -13,15 +13,23 @@ export class LoginFormComponent implements OnInit {
 
   constructor() { }
 
+  setErrorStatus(mobile:Boolean, password:Boolean){
+    this.mobileErrorStatus = mobile;
+    this.passwordErrorStatus = password;
+    
+  }
+  
   submitFormDetails(loginDetails:NgForm){
     if(loginDetails.invalid){
-      this.mobileErrorStatus = true;
-      this.passwordErrorStatus = true;
+      this.setErrorStatus(true, true);
       return
     }
     
     loginDetails.value.mobileNumber = loginDetails.value.mobileNumber.trim();
     console.log(loginDetails.value);
+    loginDetails.resetForm();
+    this.setErrorStatus(false, false);
+
   }
   
   ngOnInit(): void {

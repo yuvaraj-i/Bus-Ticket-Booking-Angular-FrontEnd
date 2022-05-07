@@ -21,14 +21,14 @@ nav {
         align-self: center;
     }
 
-    a {
+    p{
         @include navigation;
         font-size: 1rem;
         border-bottom: 4px solid $white-color;
 
     }
     
-    a:hover {
+    p:hover{
         @include hover-property()
     }
 

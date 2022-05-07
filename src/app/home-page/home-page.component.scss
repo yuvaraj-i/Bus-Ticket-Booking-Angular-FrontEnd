@@ -1,5 +1,15 @@
 
 
-p {
-    font-size: 2em;
+.container {
+    // display: flex;
+    padding: 4%;
+    max-width: 35vw;
+}
+
+
+@media screen and (max-width: 676px) {
+    .container {
+        max-width: 85vw;
+        // justify-content: space-evenly;
+    }
 }

@@ -10,18 +10,26 @@ export class SearchLocationFormComponent implements OnInit {
 
   boardingError:Boolean = false;
   destinationError:Boolean = false;
+  dateError:Boolean = false;
 
   constructor() { }
+
+  setErrorStatus(boarding:Boolean, destination:Boolean, date:Boolean){
+    this.boardingError = boarding;
+    this.destinationError = destination;
+    this.dateError = date;
+  }
 
   submitSearchDetails(searchLocationDetails:NgForm){
     
     if(searchLocationDetails.invalid){
-      this.boardingError = true;
-      this.destinationError = true;
+      this.setErrorStatus(true, true, true);
       return
     }
     
     console.log(searchLocationDetails.value);
+    searchLocationDetails.resetForm();
+    this.setErrorStatus(false, false, false);
     
 
 

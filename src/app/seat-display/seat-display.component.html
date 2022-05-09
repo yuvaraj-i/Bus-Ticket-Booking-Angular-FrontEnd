@@ -1,0 +1,43 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="container">
+    <div class="bus-container">
+        <div>
+            <p>{{bus.busName | uppercase}} - <span>{{bus.type | titlecase}}</span></p>
+            <p>Boarding Point - <span>{{bus.pickupPoint | titlecase}}</span></p>
+            <p>Droping Point - <span>{{bus.dropingPoint | titlecase}}</span></p>
+        </div>
+        <p>Avaliable Seats - <span>{{avaliableSeatCounts}}</span></p>
+    </div>
+    
+    <div class="seats-details">
+        <div class="bus-layout">
+            <img src="../../assets/car-steering-wheel.png" alt="">
+            <div id = "front" class="front-seat">
+                <!-- <div *ngFor = "let seat of seatsStatus"> -->
+                    <div *ngFor = "let seat of seatsStatus" >
+                        <img id = {{seat}} src="../../assets/cinema-seat-theatre-sofa-svgrepo-com.svg" width="24px" height="24px" alt="bus seat icon" ng-click ="seatSelected($event)">
+                        <img id = {{seat+10}} src="../../assets/cinema-seat-theatre-sofa-svgrepo-com.svg" width="24px" height="24px" alt="bus seat icon" (click)="seatSelected(1)">
+                    </div>
+                <!-- </div> -->
+            </div>  
+    
+            <div id = "back" class = "back-seat">
+                <div *ngFor="let value of lastRows">
+                    <img id = "{{value}}" src="../../assets/cinema-seat-theatre-sofa-svgrepo-com.svg" width="24px" height="24px" alt="bus seat icon" (click)="seatSelected(1)">
+                </div>
+            </div>
+        </div>
+
+        <div class="prices">
+            <p *ngIf="seats.length !== 0">Seats Selected</p>
+            <span *ngIf="seats.length !== 0">{{seats}}</span>
+            <p *ngIf="seats.length !== 0">Fare: <span>{{calculateCharge()}}</span></p>
+
+            <button style="background-color: #1951B5;" *ngIf="seats.length !== 0 ">CONTINUE</button>
+            <button style="background-color: #D3D3D3;" *ngIf="seats.length === 0" disabled>SELECT SEATS TO PROCEED</button>
+
+        </div>
+    </div>
+
+</div>

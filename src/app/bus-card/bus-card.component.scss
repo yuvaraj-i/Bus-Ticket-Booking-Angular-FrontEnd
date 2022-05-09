@@ -77,12 +77,14 @@
 
     }
 
-    hr {
-        margin-top: 0.4rem;
-        margin-bottom: 0.4rem;
-        border: 0.1px solid $grey-color;
+    .line {
+        border-top: 1px solid $grey-color;
     }
 
+}
+
+.bus-card:hover {
+    background-color: $white-grey;
 }
 
 

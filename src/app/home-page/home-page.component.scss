@@ -1,7 +1,6 @@
 
 
 .container {
-    // display: flex;
     padding: 4%;
     max-width: 35vw;
 }
@@ -9,7 +8,9 @@
 
 @media screen and (max-width: 676px) {
     .container {
-        max-width: 85vw;
-        // justify-content: space-evenly;
+        margin-left: 4%;
+        margin-right: 4%;
+        max-width: 75vw;
+
     }
 }

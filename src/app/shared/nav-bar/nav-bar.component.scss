@@ -2,20 +2,18 @@
 
 @mixin  hover-property {
     cursor: pointer;
-    border-bottom: 3px solid $green-color;
+    border-bottom: 2px solid $green-color;
 }
 
 nav {
     display: flex;
-    padding-top: 6px;
-    padding-bottom: 6px;
-    padding-left: 18px;
-    padding-right: 18px;
+    padding: 0.3rem 1.75rem 0.3rem 0.75rem;
     justify-content: space-between;
     background-color: $white-color;
     position: sticky;
     border-bottom: 1px solid $grey-color;
     top: 0;
+    margin-bottom: 1rem;
 
     .home {
         align-self: center;
@@ -34,7 +32,7 @@ nav {
 
     div {
         display: flex;
-        gap: 12px;
+        gap: 0.7rem;
     }
 }
 

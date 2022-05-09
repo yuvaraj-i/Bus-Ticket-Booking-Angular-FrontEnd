@@ -1,6 +1,6 @@
-<div class="bus-card">
+<div class="bus-card" *ngFor="let bus of buses">
     <div class="item-1">
-        <p class="font-bold">{{bus.name | uppercase}}</p>
+        <p class="font-bold">{{bus.busName | uppercase}}</p>
         <p class="font-bold">{{bus.startTime}}</p>
         <p class="font-name">{{bus.totalTravelHours}}</p>
         <p class="font-bold">{{bus.reachingTime}}</p>
@@ -21,15 +21,14 @@
         </div>
         <div class="item-1">
             <img class = "currency-inr" src="../../assets/currency-inr.svg" width="18px" height="18px" alt="rupee symbol">
-            <p class="font-bold">{{bus.travelCharges}}</p>
+            <p class="font-bold">{{bus.seatPrice}}</p>
         </div>
     </div>
-
-    <hr>
     
-    <div class="details" >
+    <div class="details line">
         <img src="../../assets/bus.svg" width="23px" height="23px" alt="green color bus">
-        <button>SELECT SEATS</button>
+        <button value="{{bus.id}}"#ref (click)="selectedBus(ref.value, buses.indexOf(bus))">SELECT SEATS</button>
+        <!-- <input type="button" value="s"> -->
     </div>
     
 </div>

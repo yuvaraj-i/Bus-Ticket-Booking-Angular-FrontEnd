@@ -1,6 +1,7 @@
 
 export interface Bus {
-    name:string;
+    id:Number;
+    busName:string;
     startTime:string;
     reachingTime:string;
     totalTravelHours:string;
@@ -9,6 +10,6 @@ export interface Bus {
     destinationLocation:string;
     pickupPoint:string;
     dropingPoint:string;
-    travelCharges:string;
-
+    seatPrice:string;
+    numberOfSeats:Number;
 }

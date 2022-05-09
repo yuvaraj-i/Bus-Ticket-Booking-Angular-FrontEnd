@@ -1,0 +1,95 @@
+@import "../../dist/globals";
+
+@mixin property {
+    display: flex;
+    justify-content: space-around;
+    background-color: $white-grey-1;
+    border: 1px solid $grey-color;
+    
+}
+
+.container {
+    margin: 3rem 4rem 2rem 4rem;
+    width: 70vw;    
+}
+
+span {
+    font-weight: 550;
+    color: $green-color;
+}
+
+.bus-container {
+    @include property();
+    padding: 0.75rem;
+    // margin-bottom: 1rem;
+    font-weight: 550;
+    // width: 72.5vw;
+}
+
+
+.back-seat {
+    display: flex;
+}
+
+img {
+   padding: 0.2rem; 
+   //    transform: rotate(90deg);
+}
+
+img:hover {
+    cursor: pointer;
+}
+
+.bus-layout{
+    padding: 0.5rem;
+    margin: 2rem;
+}
+
+.bus-layout > img {
+    padding-left: 7.4rem;
+    
+}
+
+.seats-details {
+    @include property();
+    font-weight: 550;
+    box-sizing: border-box;
+    
+    .bus-layout {
+        border: 1px solid $grey-color;
+        background-color: $white-color;
+        border-radius: 0.35rem;
+        // transform: rotate(-90deg);
+    }
+
+    .prices {
+        align-self: flex-end;
+        padding: 1.75rem;
+    }
+
+    button {
+        border: none;
+        padding: 0.55rem;
+        width: 20vw;
+        font-weight: 500;
+        margin-top: 1rem;
+        color: $white-color;
+        border-radius: 0.25rem;
+    }
+
+    button:hover {
+        cursor: pointer;
+    }
+        
+}
+
+.front-seat {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    width: fit-content;
+    border-top: 1px solid $grey-color;
+    column-gap: 1.9em;
+    margin-top: 0.8rem;
+
+
+}

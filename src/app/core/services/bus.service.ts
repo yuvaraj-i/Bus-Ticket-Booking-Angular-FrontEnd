@@ -11,29 +11,31 @@ import { HttpService } from './http.service';
 export class BusService {
 
   private listOfAvaliableBuses!:Array<any>;
-  // private selectedBus$:Subject<any>;
+  private selectedBus$:any = [];
+  seats:number[] = [];
   
   constructor(private httpServices:HttpService) { 
     // this.selectedBus$ = new Subject<any>();
+    // this.seats = seats;
   }
   
   getAllBusesByLocation(){
     const bus:Bus = {
       id:1,
       busName: "orange Travels",
-      startTime: "11:30",
+      startingTime: "11:30",
       reachingTime: "4:00",
       totalTravelHours: "6hr 0m",
       type:"seater",
-      boardingLocation:"Coimbatore",
-      destinationLocation:"Chennai",
+      startLocation:"Coimbatore",
+      endLocation:"Chennai",
       pickupPoint:"Gandhipuram",
       dropingPoint:"kayambedu",
       seatPrice:"400",
-      numberOfSeats: 10
+      numberOfSeats: 10,
     }
     
-    let buses = this.httpServices.getAllBusesByLocation();
+    // let buses = this.httpServices.getAllBusesByLocation();
     
     // this.listOfAvaliableBuses.concat(buses);
     
@@ -41,11 +43,23 @@ export class BusService {
   }
   
   getSelectedBus(){    
-    // return this.selectedBus$;
+    return this.selectedBus$[0];
   }
   
-  setSelectedBus(bus:any){
-    // this.selectedBus$.next(bus);
+  setSelectedBus(busObservable:any){
+    if(this.selectedBus$.lenght != 0) {
+      this.selectedBus$ = [];
+    }
+
+    this.selectedBus$.push(busObservable);
+  }
+
+  setSeats(seatNumber:number){
+    this.seats.unshift(seatNumber);
+  }
+
+  getSeats(){
+    return this.seats;
   }
 
 }

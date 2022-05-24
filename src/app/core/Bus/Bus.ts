@@ -2,14 +2,19 @@
 export interface Bus {
     id:Number;
     busName:string;
-    startTime:string;
-    reachingTime:string;
-    totalTravelHours:string;
+    numberOfSeats:Number;
     type:string;
-    boardingLocation:string;
-    destinationLocation:string;
+    startLocation:string;
+    endLocation:string;
     pickupPoint:string;
     dropingPoint:string;
+    startingTime:string;
+    // endTime:string;
+    // avaliable:boolean;
+    // numberPlateDeatails:string;
+    // boardingPoint:string;
     seatPrice:string;
-    numberOfSeats:Number;
+    // destinationReached:boolean;
+    reachingTime:string;
+    totalTravelHours:string;
 }

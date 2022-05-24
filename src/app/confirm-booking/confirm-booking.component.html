@@ -1,30 +1,59 @@
-<p>confirmation of booking</p>
+<app-nav-bar></app-nav-bar>
 
-<p> Contact Details</p>
-<label for="">User Name</label>
-<input type="text" name="" id="">
+<div class="outer">
+    <div class="bus-name">
+        <p class="align-text">Review your Booking</p>
+        <p>{{bus.startLocation | titlecase}} - {{bus.endLocation | titlecase}} | {{bookingDate | date:'mediumDate'}}</p>
+    </div>
+    <div class="container">
+        <div class="bus-details">
+            <p>{{bus.busName | uppercase}}</p>
+            <p>Seats: {{selectedSeats}}</p>
+        </div>
 
-<label for="">Email</label>
-<input type="text" name="" id="">
+        <div class="info-card">
+            <p class="form-name">Passenger information</p>
 
-<p>Passenger information</p>
+            <div class="passenge-details" *ngFor="let seat of selectedSeats; let number = index">
 
-<label for="">Passenger information</label>
-<label for="">Passenger{{numberOfPassengers}}</label>
-<input type="text" name="" id="">
+                <p>Passenger {{number+1}}</p>
+                <div class="price-card">
+                    <label for="name">Name</label>
+                    <input type="text" name="Passenger_{{number+1}}" id="name" required #passengerName="ngModel" ngModel
+                        (blur)="sendPassengerName(passengerName)" autocomplete="off">
 
-<label for="">Gender</label>
-<input type="radio" name="" id="">
-<label for="">Male</label>
-<input type="radio" name="" id="">
-<label for="">Female</label>
+                    <label for="gender">Gender</label>
+                    <select name="gender_{{number+1}}" id="gender" required ngModel #passengerGender="ngModel"
+                        (blur)="setPassengerGender(passengerGender)">
+                        <option value="">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
 
-<p>Booking Charge</p>
-<p>Seats:</p>
-<p>{{selectedSeats}}</p>
-<p>Total Amount:</p>
-<img src="../../assets/rupee.svg" alt="" width="20px" height="20px">
-<p>{{totalPrice}}</p>
+                </div>
+            </div>
 
-<button>Confirm</button>
+        </div>
 
+        <div class="info-card">
+            <p class="form-name"> Contact Details</p>
+            <div class="details-card">
+                <label for="name">User name</label>
+                <input type="text" id="name" value={{userName}} disabled>
+                <label for="email">Email</label>
+                <input type="text" value={{email}} id="email" disabled>
+            </div>
+            <span>*registered account info</span>
+        </div>
+
+
+        <p class="amout">Booking Charges</p>
+        <div class="price-card price">
+            <p>Total Amount:</p>
+            <p class="price-amount">&#8377;{{totalPrice}}</p>
+        </div>
+
+        <p class="success-msg">{{message}}</p>
+        <button (click)="formDetailsSubmit()">Confirm</button>
+    </div>
+</div>

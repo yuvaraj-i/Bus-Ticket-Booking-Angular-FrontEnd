@@ -1,0 +1,158 @@
+@import "../../dist/globals";
+
+
+.outer {
+    font-weight: 600;
+    padding: 5%;
+    padding-top: 1%;
+    background-color: $white-grey;
+}
+
+.align-text {
+    font-size: 1.5rem;
+    color: $green-color;
+    padding: 0.5rem 0 0.5rem 0;
+}
+
+.container {
+    padding: 1rem 2rem 1rem 2rem;
+    border: 1px solid $grey-color;
+    border-radius: 0.35rem;
+    background-color: $white-color;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.form-name {
+    bottom: 1.66rem;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+}
+
+.bus-name {
+    border-bottom: 2px solid $navy-light-blue;
+    margin: 2% 0 5% 0;
+}
+
+.bus-details {
+    padding: 0;
+}
+
+.amout {
+    padding: 1rem 0 0.5rem 0;
+}
+
+
+.info-card {
+    padding: 0.8rem;
+    border: 1px solid $grey-color;
+    margin: 2rem 0 0.75rem 0;
+    border-radius: 0.35rem;
+
+    .passenge-details {
+        padding: 0.7rem;
+    }
+
+    span {
+        font-size: 0.7rem;
+        font-weight: 400;
+    }
+}
+
+
+
+.details-card {
+    display: flex;
+    gap: 0.85rem;
+    padding: 0.4rem;
+
+
+    label {
+        font-size: 0.85rem;
+        color: $green-color;
+
+    }
+
+    input {
+        padding: 0.35rem;
+        font-size: 0.85rem;
+    }
+
+    select {
+        -webkit-appearance: none;
+        padding: 0.2rem 0.25rem 0.2rem 0.25rem;
+        cursor: pointer;
+        font-size: 0.75rem;
+
+    }
+
+    input:disabled {
+        padding: 0.3rem;
+        border: 1px solid $black-color;
+
+    }
+
+}
+
+.passenger {
+    @extend .details-card;
+    flex-direction: column
+}
+
+.price-card {
+    @extend .details-card;
+    flex-direction: row;
+    font-size: 0.95rem;
+
+    img {
+        align-self: center;
+    }
+
+    .price-amount {
+        color: $green-color;
+    }
+
+}
+
+.price {
+    padding: 0;
+    padding-top: 0.4rem;
+    padding-bottom: 1.5rem;
+
+}
+
+button {
+    width: 100%;
+    padding: 0.7rem;
+    font-size: 1rem;
+    border-radius: 0.3rem;
+    border: none;
+    background-color: $green-color;
+    color: $white-color;
+    cursor: pointer;
+}
+
+.success-msg {
+    color: $green-color;
+    padding: 0.6rem;
+    text-align: center;
+}
+
+
+@media screen and (max-width: 676px) {
+
+    .price-card,
+    .details-card {
+        flex-direction: column;
+        padding-bottom: 0;
+    }
+
+    .price {
+        flex-direction: row;
+        padding: 1rem 0 1rem 0;
+    }
+
+    select {
+        width: max-content;
+    }
+
+}

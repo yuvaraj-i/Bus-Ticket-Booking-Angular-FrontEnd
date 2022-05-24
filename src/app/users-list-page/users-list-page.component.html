@@ -1,0 +1,28 @@
+<p>All users data</p>
+
+<div class="error">{{responseMessage | lowercase}}</div>
+
+<div class="table-container">
+    <table>
+        <tr>
+            <th>S.No</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Mobile number</th>
+            <th>Age</th>
+            <th>Role</th>
+            <th>Action</th>
+        </tr>
+
+        <tr *ngFor="let user of usersList, let index = index">
+            <td>{{index+1}}</td>
+            <td>{{user.name | titlecase}}</td>
+            <td>{{user.emailAddress}}</td>
+            <td>{{user.mobileNumber}}</td>
+            <td>{{user.age}}</td>
+            <td>{{user.roles}}</td>
+            <td class="button-action" (click)="deleteData(user.mobileNumber)"><button>Delete</button></td>
+        </tr>
+
+    </table>
+</div>

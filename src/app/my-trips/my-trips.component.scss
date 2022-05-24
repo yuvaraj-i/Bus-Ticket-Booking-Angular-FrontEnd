@@ -1,0 +1,36 @@
+@import "../../dist/globals";
+
+span {
+    color: $navy-light-blue;
+    font-weight: 550;
+}
+
+.outer {
+    border: 1px solid $grey-color;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: 550;
+    margin: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 0.3rem;
+}
+
+.fit-box {
+    padding: 0.7rem;
+    border-top: 2px solid $blue-color;
+}
+
+.ticket-card {
+    display: flex;
+    gap: 5rem;
+    justify-content:space-between;
+}
+
+.price {
+    text-align: end;
+}
+
+button {
+    @include btn;
+}

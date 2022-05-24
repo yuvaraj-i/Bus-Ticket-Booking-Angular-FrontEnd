@@ -1,0 +1,34 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="box-container">
+    <aside>
+        <div class="source-links">
+            <img src="../../assets/group_FILL0_wght400_GRAD0_opsz48.svg" alt="user icon">
+            <p routerLink="users">Users</p>
+        </div>
+        <div class="source-links">
+            <img src="../../assets/pin_drop_FILL0_wght400_GRAD0_opsz48.svg" alt="locatoin icon">
+            <p routerLink="add/locations">Locations - Add</p>
+        </div>
+
+        <div class="source-links">
+            <img src="../../assets/pin_drop_FILL0_wght400_GRAD0_opsz48.svg" alt="locatoin icon">
+            <p routerLink="locations">Locations - View</p>
+        </div>
+
+        <div class="source-links">
+            <img src="../../assets/icons8-bus-50.png" alt="bus icon" width="24px" height="24px">
+            <p routerLink="bus/view">Bus - View</p>
+        </div>
+
+        <div class="source-links">
+            <img src="../../assets/icons8-bus-50.png" alt="bus icon" width="24px" height="24px">
+            <p routerLink="bus/add">Bus - Add</p>
+        </div>
+
+    </aside>
+
+    <div class="display">
+        <router-outlet></router-outlet>
+    </div>
+</div>

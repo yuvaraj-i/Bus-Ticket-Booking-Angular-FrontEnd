@@ -1,16 +1,209 @@
+@import "../../dist/globals";
+
+.outer-heading {
+    background-color: rgb(0, 170, 45);
+
+    .form-section {
+        padding: 3rem;
+        padding-bottom: 0;
+
+        p {
+            font-size: 1.5rem;
+            padding: 1rem;
+            color: $white-color;
+            margin-left: 8%;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
 
 
-.container {
-    padding: 4%;
-    max-width: 35vw;
+            .left-section {
+                .name {
+                    padding: 2rem;
+                    padding-left: 0;
+                }
+
+                p {
+                    padding: 0.35rem;
+                    padding-left: 0;
+                    font-size: 1.9rem;
+                    width: max-content;
+                    margin: 0;
+                }
+
+                .ticket {
+                    color: $black-color;
+                    font-size: 2.2rem;
+                }
+
+            }
+        }
+    }
+
+
+    .popular-header {
+        padding: 2rem;
+        background-color: $white-grey;
+
+
+        .title {
+            text-align: center;
+            font-size: 1.45rem;
+            font-weight: 450;
+            padding: 1rem;
+        }
+
+        .image-title {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-around;
+
+            .image-section {
+
+                img {
+                    height: 6.25em;
+                    width: 6.25em;
+                    border-radius: 50%;
+                }
+
+                p {
+                    text-align: center;
+                    font-size: 1rem;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+
+.booking-header {
+    background-color: $white-grey;
+    width: 100%;
+
+
+    svg {
+        path {
+            fill: rgb(0, 170, 50);
+            fill-opacity: 1;
+        }
+    }
+
+
+    .topics {
+        font-size: 1.7rem;
+        text-align: center;
+        padding-bottom: 2rem;
+        padding-top: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .options {
+        display: flex;
+        justify-content: space-around;
+        font-size: 1.2rem;
+        font-weight: 450;
+        padding: 1rem;
+
+        img {
+            align-self: center;
+        }
+
+
+        .select-box {
+            padding: 0.7rem;
+            border-radius: 0.35rem;
+            background-color: $white-color;
+            border: 1px solid $grey-color;
+            box-sizing: border-box;
+
+            p {
+                text-align: center;
+                color: #223464;
+                font-size: 1rem;
+                font-weight: 550;
+            }
+
+            .names {
+                display: flex;
+                gap: 0.7rem;
+            }
+        }
+
+    }
+
 }
 
 
 @media screen and (max-width: 676px) {
+
+    .outer-heading {
+
+        .form-section {
+            padding: 0;
+
+            p {
+                margin-left: 7%;
+            }
+
+            .container {
+                display: block;
+                padding: 1.5rem;
+            }
+        }
+
+        .booking-header {
+            .topics {
+                margin: 0;
+            }
+
+            .options {
+                padding: 0.7rem;
+
+                .select-box {
+                    padding: 0.45rem;
+
+                    p {
+                        font-size: 0.6rem;
+                    }
+
+                }
+            }
+        }
+
+        .popular-header {
+            padding: 1rem;
+
+            .image-title {
+                padding: 0;
+
+                .image-section {
+
+                    img {
+                        height: 5em;
+                        width: 5em;
+                        justify-content: space-between;
+                    }
+                }
+
+            }
+        }
+
+
+    }
+
+
     .container {
-        margin-left: 4%;
-        margin-right: 4%;
-        max-width: 75vw;
+        display: block;
+
+        // width: 100%;
+        img,
+        p {
+            display: none;
+        }
 
     }
 }

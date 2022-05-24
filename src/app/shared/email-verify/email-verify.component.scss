@@ -1,0 +1,62 @@
+@import "../../../dist/globals";
+
+.email-container {
+    padding: 2rem 1rem 2rem 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid $grey-color;
+
+}
+
+.header {
+    font-size: 1.2rem;
+}
+
+.email-input {
+    display: flex;
+    padding: 1rem 0.4rem 0.6rem 0.4rem;
+    width: max-content;
+    gap: 1rem;
+
+    button {
+        padding: 0.3rem;
+        font-size: 0.85rem;
+        width: max-content;
+    }
+}
+
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+.notification {
+    font-size: 1.1rem;
+    color: $green-color;
+}
+
+input {
+    padding: 0.2rem 0.4rem 0.2rem 0.4rem;
+}
+
+.submit-button {
+    padding: 0.3rem;
+    font-size: 0.85rem;
+    width: 35%;
+    margin:  0.2rem;
+
+
+}
+
+.email-alert {
+    font-size: 0.8rem;
+    font-weight: 450;
+    padding: 0.5rem;
+    color: $red-color;
+}
+
+.hide-container {
+    display: none;
+}
+
+

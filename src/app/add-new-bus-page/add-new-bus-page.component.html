@@ -1,0 +1,92 @@
+<p>Add new bus service</p>
+
+<form #busDetails="ngForm" (submit)="submitBusData(busDetails)" autocomplete="off">
+    <div class="form-section">
+        <div class="form-name">
+            <label for="name">Bus name</label>
+            <input type="text" id="name" name="busName" #busName = "ngModel" required ngModel>
+            <p *ngIf="busName.errors?.['required'] && busName.touched">bus name can not be empty!</p>
+        </div>
+
+        <div class="form-name">
+            <label for="registerNumber">Bus register number</label>
+            <input type="text" id="registerNumber" name="numberPlateDeatails" #registerNumber = "ngModel" required ngModel>
+            <p *ngIf="registerNumber.errors?.['required'] && registerNumber.touched">bus register number can not be empty!</p>
+        </div>
+
+        <div class="form-name">
+            <label for="start">Start location</label>
+            <input list="locations" id="start" name="startLocation" #startTime = "ngModel" required ngModel>
+            <p *ngIf="startTime.errors?.['required'] && startTime.touched">start location can not be empty!</p>
+        </div>
+
+        <div class="form-name">
+            <label for="pick-up">Pickup point</label>
+            <input type="text" id="pick-up" name="pickupPoint" #pickupPoint = "ngModel" required ngModel>
+            <p *ngIf="pickupPoint.errors?.['required'] && pickupPoint.touched">pickup point can not be empty!</p>
+        </div>
+
+        <div class="form-name">
+            <label for="s-time">Starting time</label>
+            <input type="time" id="s-time" name="startingTime" #startingTime = "ngModel" required ngModel>
+            <p *ngIf="startingTime.errors?.['required'] && startingTime.touched">starting point can not be empty!</p>
+        </div>
+
+        <div class="form-name">
+            <label for="price">Seat Price</label>
+            <input type="number" id="price" name="seatPrice" #price = "ngModel" required ngModel >
+            <p *ngIf="price.errors?.['required'] && price.touched">seat price can not be empty!</p>
+            <!-- <p *ngIf="price.value <= 2000  && price.touched">seat price can not be empty! {{price.value}}</p> -->
+        </div>
+
+                <button>Submit</button>
+
+    </div>
+
+    <div class="form-section">
+        <div class="form-name">
+            <label for="name">Bus type</label>
+            <input type="text" list="bus-types-list" role="textbox" name="type" #busType = "ngModel" required ngModel>
+            <p *ngIf="busType.errors?.['required'] && busType.touched">bus type can not be empty!</p>
+        </div>
+
+        <div class="form-name">
+            <label for="seats">Maximum seats</label>
+            <input type="number" id="seats" name="numberOfSeats" #seats = "ngModel" required ngModel>
+            <p *ngIf="seats.errors?.['required'] && seats.touched">seat can not be empty!</p>
+        </div>
+
+        <div class="form-name">
+            <label for="end">End location</label>
+            <input list="locations" id="end" name="endLocation" #endLocation = "ngModel" required ngModel>
+            <p *ngIf="endLocation.errors?.['required'] && endLocation.touched">end location can not be empty!</p>
+        </div>
+
+        <div class="form-name">
+            <label for="drop">Droping point</label>
+            <input type="text" id="drop" name="dropingPoint" #dropPoint = "ngModel" required ngModel>
+            <p *ngIf="dropPoint.errors?.['required'] && dropPoint.touched">droping point can not be empty!</p>
+        </div>
+
+        <div class="form-name">
+            <label for="r-time">Reaching time</label>
+            <input type="time" id="r-time" name="reachingTime" #reachTime = "ngModel" required ngModel>
+            <p *ngIf="reachTime.errors?.['required'] && reachTime.touched">reaching time can not be empty!</p>
+        </div>
+
+    </div>
+
+
+</form>
+
+<datalist id="bus-types-list">
+    <option value="Seater"></option>
+    <option value="Semi-sleeper"></option>
+    <!-- <option value="Non-ac Semi-sleeper"></option> -->
+</datalist>
+
+<datalist id="locations">
+    <option *ngFor="let location of locations" value={{location}}></option>
+    <!-- <option value="Semi-sleeper"></option> -->
+    <!-- <option value="Non-ac Semi-sleeper"></option> -->
+</datalist>

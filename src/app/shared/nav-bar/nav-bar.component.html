@@ -4,12 +4,26 @@
     </div>
 
     <div>
-        <p>My Trips</p>
-        
+
+        <p routerLink="/my-trips">My Trips</p>
+
+        <ng-template [ngIf]="roleStatus">
+            <p (click)="adminDashboard()">Dashboard</p>
+        </ng-template>
+
         <div class="profile-menu">
-            <p>Profile</p>
-            <p>Logout</p>
+            <p routerLink="/profile">Profile</p>
+            <p (click)="sendLogout()">Logout</p>
         </div>
     </div>
-</nav>
 
+    <!-- <div class="menu">
+        <select name="" id="">
+            <option value="">menu</option>
+            <option value="">My Trips</option>
+            <option value="">Dashboard</option>
+            <option value="">Profile</option>
+            <option value="">Logout</option>
+        </select>
+    </div> -->
+</nav>

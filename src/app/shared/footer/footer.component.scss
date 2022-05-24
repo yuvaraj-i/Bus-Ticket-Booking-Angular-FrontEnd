@@ -1,0 +1,44 @@
+@import "../../../dist/globals";
+
+footer {
+    background-color: $light-navy-color;
+    color: $white-color;
+    padding: 0.5rem;
+    // margin: 0.8rem;
+
+    .title {
+        font-size: 1.3rem;
+        // padding-left: 0;
+        font-weight: 500;
+    }
+
+    p {
+        padding: 0.45rem;
+    }
+
+    .contact-section {
+        display: flex;  
+        // gap: 3px;
+        // justify-content: center;
+        padding-left: 0.5rem;
+        // padding-bottom: 0.5rem;
+
+        img {
+            align-self: center;
+        }
+
+        p {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+    }
+    
+    .bottom {
+        text-align: center;
+        border-top: 1px solid $white-color;
+        // padding-top: 0.75rem;
+        margin-top: 0.6rem;
+        font-size: 0.76rem;
+        font-weight: 500;
+    }
+}

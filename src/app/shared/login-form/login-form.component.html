@@ -1,10 +1,10 @@
 <div class="outer-container">
     <h2 class="align-center">Login</h2>
-
+    <p class="account-error">{{responseError}}</p>
     <form novalidate #loginDetails = "ngForm" autocomplete="off" (ngSubmit)="submitFormDetails(loginDetails)">
         <label for="mobile-number">Mobile Number</label>
         <input id="mobile-number" type="tel" name="mobileNumber" placeholder="e:g: 9876543210" minlength="10" #number = "ngModel" required ngModel>
-        <div id="error-message" *ngIf="number.invalid && number.touched || mobileErrorStatus">
+        <div class="error-message" *ngIf="number.invalid && number.touched || mobileErrorStatus">
             <!-- mobileErrorStatus = false; -->
             <span *ngIf="number.invalid"><img src="../../../assets/icons8-alert-16.png"/></span>
             <div *ngIf="number.hasError('required')">mobile number can not be empty</div>
@@ -16,7 +16,7 @@
 
         <label for="password">Password</label>
         <input id = "password" type="password" name="password" placeholder="e:g: password" #password = "ngModel" required ngModel>
-        <div id="error-message" *ngIf="password.invalid && password.touched || passwordErrorStatus">
+        <div class="error-message" *ngIf="password.invalid && password.touched || passwordErrorStatus">
             <span *ngIf="password.invalid"><img src="../../../assets/icons8-alert-16.png"/></span>
             <div *ngIf="password.hasError('required')">password can not be empty</div>
 

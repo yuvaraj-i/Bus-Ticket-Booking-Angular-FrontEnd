@@ -11,6 +11,8 @@ import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { HomeBtnComponent } from './home-btn/home-btn.component';
 import { SearchLocationFormComponent } from './search-location-form/search-location-form.component';
+import { EmailVerifyComponent } from './email-verify/email-verify.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -24,7 +26,9 @@ import { SearchLocationFormComponent } from './search-location-form/search-locat
     LoginNavBarComponent,
     SignUpFormComponent,
     HomeBtnComponent,
-    SearchLocationFormComponent
+    SearchLocationFormComponent,
+    EmailVerifyComponent,
+    FooterComponent
   ],
 
   imports: [
@@ -40,7 +44,9 @@ import { SearchLocationFormComponent } from './search-location-form/search-locat
     SignUpBtnComponent,
     SignUpFormComponent,
     HomeBtnComponent,
-    SearchLocationFormComponent
+    SearchLocationFormComponent,
+    EmailVerifyComponent,
+    FooterComponent
   ]
 
 })

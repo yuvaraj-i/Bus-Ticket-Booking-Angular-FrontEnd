@@ -1,0 +1,11 @@
+<!-- <app-nav-bar></app-nav-bar> -->
+
+<div class="container">
+    <p class="header">View avaliable bus service travel locations </p>
+    
+    <p class="heading">City names:</p>
+    <div *ngFor="let location of locations" class="details-section">
+        <p>{{location | titlecase}}</p>
+        <button (click)="deleteData(location)">Delete</button>
+    </div>
+</div>

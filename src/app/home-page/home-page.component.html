@@ -1,8 +1,74 @@
 <app-nav-bar></app-nav-bar>
+<div class="outer-heading">
+    <div class="form-section">
+        <p>Bus Ticket Booking</p>
+        <div class="container">
+            <app-search-location-form></app-search-location-form>
+            <div class="left-section">
+                <img src="../../assets/bus.svg" width="200px" height="200px" alt="">
+                <p class="name">Planing for weekend trips?</p>
+                <p>Have you booked your bus </p>
+                <p class="ticket">ticket?</p>
+            </div>
+        </div>
+    </div>
 
-<div class="container">
-    <app-search-location-form></app-search-location-form>
-    <!-- <img src="../../assets/8493.jpg" width = "500px" height = "400px" alt=""> -->
+    <div class="booking-header">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200">
+            <path
+                d="M0,192L80,165.3C160,139,320,85,480,80C640,75,800,117,960,122.7C1120,128,1280,96,1360,80L1440,64L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z">
+            </path>
+        </svg>
+        <p class="topics">Need to book ticket?</p>
+        <div class="options">
+            <div class="select-box">
+                <p>SELECT</p>
+                <div class="names">
+                    <p>Locations</p>
+                    <img src="../../assets/location_city_black_24dp.svg" alt="location icon">
+                </div>
+            </div>
+            <div class="select-box">
+                <p>SELECT</p>
+                <div class="names">
+                    <p>Bus & Seats</p>
+                    <img src="../../assets/departure_board_black_24dp.svg" alt="bus icon">
+                </div>
+            </div>
+            <div class="select-box">
+                <p>CONFIRM</p>
+                <div class="names">
+                    <p>Booking Details</p>
+                    <img src="../../assets/confirmation_number_black_24dp.svg" alt="ticket icon">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="popular-header">
+        <p class="title">Popular places</p>
+        <div class="image-title">
+            <div class="image-section">
+                <img src="../../assets/istockphoto-1226340114-170667a.jpg" alt="chennai">
+                <p>Chennai</p>
+            </div>
+            <div class="image-section">
+                <img src="../../assets/karnataka-245031__340.jpg" alt="bangalore">
+                <p>Bangalore</p>
+            </div>
+            <div class="image-section">
+                <img src="../../assets/coimbatoe-i-love.jpg" alt="coimbatore">
+                <p>Coimbatore</p>
+            </div>
+            <div class="image-section">
+                <img src="../../assets/istockphoto-sea-link-612x612.jpg" alt="mumbai sea link">
+                <p>Mumbai</p>
+            </div>
+        </div>
+
+    </div>
 </div>
+
+<app-footer></app-footer>
 
 <!-- <router-outlet></router-outlet> -->

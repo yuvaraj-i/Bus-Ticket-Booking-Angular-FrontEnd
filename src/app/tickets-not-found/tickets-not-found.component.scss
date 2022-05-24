@@ -1,0 +1,41 @@
+@import "../../dist/globals";
+
+
+* {
+    background-color: $white-grey;
+}
+
+.no-results {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    padding: 1.5rem;
+
+    img {
+        width: 124px;
+        height: 124px;
+    }
+
+    p {
+        align-self: center;
+        font-size: 1.5rem;
+    }
+}
+
+
+@media screen and (max-width: 676px) {
+
+    .no-results {
+
+
+        img {
+            width: 75px;
+            height: 75px;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+
+    }
+}

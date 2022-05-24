@@ -1,0 +1,55 @@
+<app-nav-bar></app-nav-bar>
+
+
+<div *ngFor="let ticket of userTicketBooking" class="outer">
+    <div class="ticket-card">
+        <div class="ticket-card">
+            <p>{{ticket.boardingLocation | titlecase}}</p>
+            <p>{{ticket.destinationLocation | titlecase}}</p>
+        </div>
+        <p>Ticket Id: {{ticket.ticketId}}</p>
+    </div>
+    <div class="fit-box">
+        <div class="ticket-card">
+            <div>
+                <p><span>{{ticket.busName | uppercase}}</span></p>
+                <p><span>{{ticket.busType | uppercase}}</span></p>
+            </div>
+
+            <div>
+                <p>No of passenger - <span>{{ticket.passengers.length}}</span></p>
+            </div>
+        </div>
+        <div class="ticket-card">
+            <p>Pickup Point - <span>{{ticket.pickupPoint | titlecase}}</span></p>
+            <p>Droping Point - <span>{{ticket.dropingPoint | titlecase}}</span></p>
+        </div>
+        <div>
+            <p>Travelling Date - <span>{{ticket.travelingDate | date:"mediumDate"}}</span></p>
+            <p>Booking Date - <span>{{ticket.bookingDate | date:"mediumDate"}}</span></p>
+        </div>
+        <div class="ticket-card">
+            <div>
+                <p>Passengers</p>
+                <div *ngFor="let passenger of ticket.passengers">
+                    <p>{{passenger.name | titlecase}} ({{passenger.gender | titlecase}})</p>
+                </div>
+            </div>
+            <div>
+                <p>Seat numbers</p>
+                <p>{{ticket.seatNumbers.toString()}}</p>
+            </div>
+        </div>
+        <div class="ticket-card">
+            <p>Charge - &#8377;{{ticket.charges}}</p>
+            <div>
+                <p>Payment Status</p>
+                <button>Confirmed</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="error">
+    <app-tickets-not-found></app-tickets-not-found>
+</div>

@@ -1,0 +1,58 @@
+@import "../../dist/globals";
+
+.container {
+    background-color: $white-color;
+    border: 1px solid $grey-color;
+}
+
+.header {
+    font-size: 1.5rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.heading {
+    font-weight: 550;
+    font-size: 1.2rem;
+    padding: 0.4rem;
+}
+
+p {
+    padding: 0.4rem;
+    margin-left: 1rem;
+    font-weight: 540;
+}
+
+.details-section {
+    display: flex;
+    gap: 4rem;
+
+    button {
+        padding: 0.5rem;
+        background-color: $red-color;
+        border: none;
+        color: $white-color;
+        font-weight: 500;
+        border-radius: 0.35rem;
+        border: 1px solid $white-color;
+        width: max-content;
+        font-size: 0.9rem;
+        margin: 0.7rem 0 0.7rem 0;
+    }
+
+    button:hover {
+        cursor: pointer;
+    }
+
+    p {
+        align-self: center;
+        width: 15%;
+    }
+}
+
+@media screen and (max-width: 676px) {
+
+    .container {
+        width: 100%;
+    }
+}

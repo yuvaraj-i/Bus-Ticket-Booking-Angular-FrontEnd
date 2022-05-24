@@ -37,6 +37,13 @@
         }
     
     }
+
+    .account-error {
+        color: $red-color;
+        font-size: 0.8rem;
+        padding: 0.8rem;
+        margin: 0;
+    }
     
     form {
         display: flex;
@@ -72,7 +79,7 @@
             cursor: pointer;
         }
 
-        #error-message{
+        .error-message{
             display: flex;
             gap: 8px;
             line-height: normal;
@@ -99,7 +106,7 @@
 
         p {
             margin: 0;
-            font-size: 0.7em;
+            font-size: 1em;
         }
 
     }

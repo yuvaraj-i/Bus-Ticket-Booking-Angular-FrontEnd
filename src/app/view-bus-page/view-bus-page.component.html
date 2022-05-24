@@ -1,0 +1,43 @@
+<!-- <app-nav-bar></app-nav-bar> -->
+
+
+
+<div class="table-container">
+
+    <h2>View Bus Management Details</h2>
+
+    <table>
+        <tr>
+            <th>Bus Name</th>
+            <th>Type</th>
+            <th>Maximum seats</th>
+            <th>Start location</th>
+            <th>End location</th>
+            <th>Pickup point</th>
+            <th>Droping point</th>
+            <th>Staring time</th>
+            <th>Reaching time</th>
+            <th>Number plate details</th>
+            <th>Seat price</th>
+            <th>Action</th>
+
+        </tr>
+
+        <tr *ngFor="let bus of allBusesList">
+            <td>{{bus.busName | uppercase}}</td>
+            <td>{{bus.type | titlecase}}</td>
+            <td>{{bus.numberOfSeats}}</td>
+            <td>{{bus.startLocation | titlecase}}</td>
+            <td>{{bus.endLocation | titlecase}}</td>
+            <td>{{bus.pickupPoint | titlecase}}</td>
+            <td>{{bus.dropingPoint | titlecase}}</td>
+            <td>{{bus.startingTime}}</td>
+            <td>{{bus.reachingTime}}</td>
+            <td>{{bus.numberPlateDeatails}}</td>
+            <td>&#8377;{{bus.seatPrice}}</td>
+            <td class="button-action" (click)="deleteData(bus.numberPlateDeatails)"><button>Delete</button></td>
+        </tr>
+
+    </table>
+
+</div>

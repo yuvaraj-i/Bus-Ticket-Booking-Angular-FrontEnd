@@ -1,13 +1,62 @@
 <app-nav-bar></app-nav-bar>
 
-<aside></aside>
-<div>
+<div class="bus-search-bar">
+    <div class="bus-search">
+        <div>
+            <p>From</p>
+            <p class="bus-values">{{boarding}}</p>
+        </div>
+
+        <img src="../../assets/arrow.svg" alt="arrow-icon" height="34px" width="34px">
+
+        <div>
+            <p>To</p>
+            <p class="bus-values">{{destination}}</p>
+        </div>
+
+    </div>
+
+    <div>
+        <p>Travel date</p>
+        <p class="bus-values">{{date | date:"mediumDate"}}</p>
+    </div>
+
+    <button (click)="goToBackPage()">MODIFY SEARCH</button>
 
 </div>
 
-<ng-template [ngIf] = "true">
-    <div class="buses-container">
-        <app-bus-card></app-bus-card>
-        <!-- <app-bus-card></app-bus-card> -->
+
+<ng-template [ngIf] = "busesData.length != 0">
+<div class="buses-container">
+    <aside>
+        <p>Bus types</p>
+        <ul>
+            <li>Steater</li>
+            <li>Semi-steater</li>
+        </ul>
+
+        <p>Amenities</p>
+        <ul>
+            <li>Wate Bottles</li>
+            <li>Chargin Point</li>
+            <li>Reading Light</li>
+        </ul>
+        <div>
+            <p>emergency no.</p>
+            <p><span>88888 99999</span></p>
+        </div>
+        <p class="notice">*Avaliable on all booking</p>
+    </aside>
+        <div class="bus-data">
+        <p><span>{{busesData.length}}</span> buses avaliable</p>
+        <app-bus-card [buses] = "busesData" ></app-bus-card>
+        </div>
+        
+        
     </div>
+</ng-template>
+
+
+<ng-template [ngIf] = "error">
+    <app-bus-not-found-card></app-bus-not-found-card>
 </ng-template>

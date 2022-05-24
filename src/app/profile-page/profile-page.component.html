@@ -1,0 +1,38 @@
+<app-nav-bar></app-nav-bar>
+<p class="heading">My Profile</p>
+
+<div class="outer-container">
+    <div class="profile-card">
+        <div class="profile-container">
+            <div class="user-details">
+                <p>Name</p>
+                <p class="text-value">{{userName | titlecase}}</p>
+            </div>
+
+            <div class="user-details">
+                <p>Date of Birth</p>
+                <p class="text-value">{{dateOfBirth}}</p>
+            </div>
+
+            <div class="user-details">
+                <p>Age</p>
+                <p class="text-value">{{age}}</p>
+            </div>
+
+        </div>
+
+        <p class="contact-heading">Contact Details</p>
+
+        <div class="profile-container">
+            <div class="user-details">
+                <p>Mobile Number</p>
+                <p class="text-value">{{mobileNumber}}</p>
+            </div>
+
+            <div class="user-details">
+                <p>Email</p>
+                <p class="text-value">{{email}}</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -14,11 +14,13 @@
 }
 
 .bus-card{
-    padding: 0.5rem;
+    padding: 0.75rem;
     border: 1px solid $grey-color;
     box-sizing: border-box;
-    margin-top: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
     margin-bottom: 1rem;
+    background-color: $white-color;
+    width: 75vw;
 
     .item-1{
         @extend .container;
@@ -44,12 +46,12 @@
         
         img {
             align-self: center;
-            padding-right: 0.2rem;
+            // padding-right: 0.2rem;
 
         }
         
         .arrow {
-            padding: 0.45rem;
+            padding: 0.2rem;
 
         }
     }
@@ -83,9 +85,9 @@
 
 }
 
-.bus-card:hover {
-    background-color: $white-grey;
-}
+// .bus-card:hover {
+//     background-color: $white-grey;
+// }
 
 
 @media screen and (max-width: 676px) {
@@ -95,6 +97,14 @@
 
     .item-2 {
         font-size: 0.65em;
+    }
+
+    .bus-search-bar {
+
+    }
+
+    aside {
+        padding: 0.5rem;
     }
 }
 

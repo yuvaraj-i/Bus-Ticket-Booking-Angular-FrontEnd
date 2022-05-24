@@ -1,7 +1,7 @@
 
-<form #searchLocations = "ngForm" (ngSubmit)="submitSearchDetails(searchLocations)">
+<form #searchLocations = "ngForm" (ngSubmit)="submitSearchDetails(searchLocations)" autocomplete="off">
     <label for="from">from</label>
-    <input id = "form" type="text" name = "boardingLocation" placeholder="select boarding" list="locationList" #from = "ngModel" required ngModel>
+    <input id = "form" type="text" name = "boardingLocation" placeholder="select boarding" list="locationList" #from = "ngModel" required ngModel (blur)="setboardingLocation(from)">
     <div class="error-message" *ngIf="(from.touched && from.invalid) || destinationError">
         <span *ngIf="from.invalid"><img src="../../../assets/icons8-alert-16.png"/></span>
         <div *ngIf="from.hasError('required')">boarding location can not be empty</div>
@@ -25,9 +25,7 @@
 </form>
 
 <datalist id="locationList">
-    <ul>
-        <li><option value="option 1"></option></li>
-    </ul>
+    <option *ngFor="let location of locations" value={{location}}></option>
 </datalist> 
 
    

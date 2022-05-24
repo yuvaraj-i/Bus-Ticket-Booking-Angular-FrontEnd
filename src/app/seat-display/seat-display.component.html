@@ -9,33 +9,44 @@
         </div>
         <p>Avaliable Seats - <span>{{avaliableSeatCounts}}</span></p>
     </div>
-    
+
     <div class="seats-details">
         <div class="bus-layout">
             <img src="../../assets/car-steering-wheel.png" alt="">
-            <div id = "front" class="front-seat">
+            <div id="front" class="front-seat">
                 <!-- <div *ngFor = "let seat of seatsStatus"> -->
-                    <div *ngFor = "let seat of seatsStatus" >
-                        <img id = {{seat}} src="../../assets/cinema-seat-theatre-sofa-svgrepo-com.svg" width="24px" height="24px" alt="bus seat icon" ng-click ="seatSelected($event)">
-                        <img id = {{seat+10}} src="../../assets/cinema-seat-theatre-sofa-svgrepo-com.svg" width="24px" height="24px" alt="bus seat icon" (click)="seatSelected(1)">
-                    </div>
+                <div *ngFor="let seat of seatsStatus" class="bus-seat">
+                    <img id={{seat.seatNumber}} src="../../assets/sofa-white.svg" [hidden]="!seat.avaliable" width="34px"
+                        height="34px" alt="bus seat icon" (click)="seatSelected(seat.seatNumber)">
+                    <img id={{seat.seatNumber}} src="../../assets/sofa-red.svg" [hidden]="seat.avaliable" width="34px"
+                        height="34px" alt="bus seat icon">
+                    <img id={{seat.seatNumber}} src="../../assets/sofa-green.svg" [hidden]="seatSelect" width="34px"
+                        height="34px" alt="bus seat icon" (click)="seatSelected(seat.seatNumber)">
+                </div>
                 <!-- </div> -->
-            </div>  
-    
-            <div id = "back" class = "back-seat">
+            </div>
+
+            <div id="back" class="back-seat" >
                 <div *ngFor="let value of lastRows">
-                    <img id = "{{value}}" src="../../assets/cinema-seat-theatre-sofa-svgrepo-com.svg" width="24px" height="24px" alt="bus seat icon" (click)="seatSelected(1)">
+                    <img id={{value.seatNumber}} src="../../assets/sofa-white.svg" [hidden]="!value.avaliable" width="34px"
+                        height="34px" alt="bus seat icon" (click)="seatSelected(value.seatNumber)">
+                    <img id={{value.seatNumber}} src="../../assets/sofa-red.svg" [hidden]="value.avaliable" width="34px"
+                        height="34px" alt="bus seat icon" (click)="seatSelected(value.seatNumber)">
+                    <img id={{value.seatNumber}} src="../../assets/sofa-green.svg" [hidden]="seatSelect" width="34px"
+                        height="34px" alt="bus seat icon" (click)="seatSelected(value.seatNumber)">
                 </div>
             </div>
         </div>
 
         <div class="prices">
-            <p *ngIf="seats.length !== 0">Seats Selected</p>
-            <span *ngIf="seats.length !== 0">{{seats}}</span>
-            <p *ngIf="seats.length !== 0">Fare: <span>{{calculateCharge()}}</span></p>
+            <p *ngIf="seatsArray.length !== 0">Seats Selected</p>
+            <span *ngIf="seatsArray.length !== 0">{{seatsArray.toString()}}</span>
+            
+            <p *ngIf="seatsArray.length !== 0">Fare: <span>&#8377;{{price}}</span></p>
 
-            <button style="background-color: #1951B5;" *ngIf="seats.length !== 0 ">CONTINUE</button>
-            <button style="background-color: #D3D3D3;" *ngIf="seats.length === 0" disabled>SELECT SEATS TO PROCEED</button>
+            <button style="background-color: #1951B5;" *ngIf="seatsArray.length !== 0" (click) = "selectSeats()">CONTINUE</button>
+            <button style="background-color: #D3D3D3;" *ngIf="seatsArray.length === 0" disabled>SELECT SEATS TO
+                PROCEED</button>
 
         </div>
     </div>

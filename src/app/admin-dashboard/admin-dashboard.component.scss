@@ -1,0 +1,83 @@
+@import "../../dist/globals";
+
+* {
+    background-color: $white-grey;
+}
+
+
+.box-container {
+    display: flex;
+    gap: 0.8rem;
+
+    .source-links {
+        display: flex;
+        padding: 0.3rem;
+        border-bottom: 1px solid $grey-color;
+
+        img {
+            align-self: center;
+        }
+
+        p {
+            color: $blue-color;
+        }
+    }
+
+    .display {
+        padding: 1rem;
+        flex-grow: 1;
+    }
+}
+
+aside {
+    padding: 1rem;
+    border: 1px solid $grey-color;
+    border-top: 0;
+    height: 121vh;
+    // width: 30vw;
+
+    img {
+        width: 24px;
+        height: 24px;
+    }
+
+    p {
+        // width: max-content;
+        padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+
+    }
+
+    p:hover {
+        cursor: pointer;
+    }
+
+}
+
+
+@media screen and (max-width: 676px) {
+
+    .box-container {
+        gap: 0;
+
+        .source-links {
+            flex-direction: column;
+    
+            p {
+                text-align: left;
+            }
+        }
+    }
+
+
+    aside {
+        width: 15vw;
+        padding: 0.5rem;
+        height: 85vh;
+
+        p {
+            padding: 0;
+            font-size: 0.6em;
+        }
+    }
+
+}

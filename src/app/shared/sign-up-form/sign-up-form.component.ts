@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { HttpService } from 'src/app/core/services/http.service';
+import { User } from 'src/app/core/User/User';
 
 @Component({
   selector: 'app-sign-up-form',
@@ -8,14 +11,36 @@ import { NgForm } from '@angular/forms';
 })
 export class SignUpFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private httpService: HttpService, private router: Router) { }
 
-  displayFormDetails(SignUpForm:NgForm){
-    console.log(SignUpForm.value);
+  displayFormDetails(SignUpForm: NgForm) {
 
+    const data = {
+      "name": SignUpForm.value.userName,
+      "mobileNumber": SignUpForm.value.number,
+      "emailAddress": SignUpForm.value.email,
+      "dateOfBirth": SignUpForm.value.dateOfBirth,
+      "password": SignUpForm.value.password
+    }
 
-    // loginDetails.resetForm();
-    // this.setErrorStatus(false, false);
+    if (SignUpForm.valid) {
+      this.httpService.signupUserRequest(data).subscribe({
+        next: (response) => {
+          SignUpForm.resetForm();
+          this.router.navigate(["/login"])
+        },
+        // },
+
+        error: (error) => {
+          if (error.status == 403) {
+            this.httpService.sendLogout();
+          }
+        }
+      }
+      )
+
+    }
+
   }
 
   setErrorStatus(arg0: boolean, arg1: boolean) {

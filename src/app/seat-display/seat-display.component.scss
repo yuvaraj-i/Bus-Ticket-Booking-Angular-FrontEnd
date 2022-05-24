@@ -3,26 +3,39 @@
 @mixin property {
     display: flex;
     justify-content: space-around;
-    background-color: $white-grey-1;
-    border: 1px solid $grey-color;
-    
+
 }
 
-.container {
-    margin: 3rem 4rem 2rem 4rem;
-    width: 70vw;    
+* {
+    background-color: $white-grey;
 }
+
+// .container {
+//      margin: 3rem 4rem 2rem 4rem;
+//      width: 70vw;
+// }
 
 span {
     font-weight: 550;
     color: $green-color;
+
+    img {
+        padding: 0;
+    }
+
+    img:hover {
+        cursor: default;
+    }
 }
 
 .bus-container {
     @include property();
     padding: 0.75rem;
-    // margin-bottom: 1rem;
+    // margin: 1rem;
+    // margin-top: 0;
     font-weight: 550;
+    border: 1px solid $grey-color;
+    // background-color: $white-color;
     // width: 72.5vw;
 }
 
@@ -32,45 +45,61 @@ span {
 }
 
 img {
-   padding: 0.2rem; 
-   //    transform: rotate(90deg);
+    padding: 0.2rem;
+    background-color: $white-color;
+    //    background-color: aqua;
+    //    transform: rotate(90deg);
 }
 
 img:hover {
     cursor: pointer;
 }
 
-.bus-layout{
+.bus-layout {
     padding: 0.5rem;
-    margin: 2rem;
+    box-sizing: border-box;
+    background-color: $white-color;
+
 }
 
-.bus-layout > img {
-    padding-left: 7.4rem;
-    
+.bus-layout>img {
+    padding-left: 8.2rem;
+
 }
 
 .seats-details {
     @include property();
+    justify-content: space-around;
     font-weight: 550;
+    padding: 1rem;
     box-sizing: border-box;
-    
+    // border: 1px solid $grey-color;
+    // background-color: $white-color;
+
+
     .bus-layout {
         border: 1px solid $grey-color;
         background-color: $white-color;
         border-radius: 0.35rem;
-        // transform: rotate(-90deg);
+        width: max-content;
+
+        .bus-seat {
+            width: max-content;
+            height: max-content;
+            background-color: $white-color;
+
+        }
     }
 
     .prices {
         align-self: flex-end;
-        padding: 1.75rem;
+        padding: 1rem;
+        width: 15em;
     }
 
     button {
         border: none;
         padding: 0.55rem;
-        width: 20vw;
         font-weight: 500;
         margin-top: 1rem;
         color: $white-color;
@@ -80,16 +109,40 @@ img:hover {
     button:hover {
         cursor: pointer;
     }
-        
+
 }
 
 .front-seat {
     display: grid;
-    grid-template-columns: repeat(2, auto);
-    width: fit-content;
+    grid-template-columns: 20% 39% 20% 15%;
     border-top: 1px solid $grey-color;
-    column-gap: 1.9em;
-    margin-top: 0.8rem;
+    background-color: $white-color;
+    padding-top: 0.8rem;
+
+}
 
 
+@media screen and (max-width: 676px) {
+    .seats-details {
+
+        .bus-layout {
+            margin: auto;
+        }
+
+        .front-seat {
+            grid-template-columns: 20% 30% 20% 15%;
+            column-gap: 0.4rem;
+            margin: 0;
+        }
+
+    }
+
+    .seats-details {
+        flex-direction: column;
+
+        .prices {
+            align-self: start;
+            padding-left: 0;
+        }
+    }
 }

@@ -1,32 +1,35 @@
 @import "../../../dist/globals";
 
-@mixin  hover-property {
+@mixin hover-property {
     cursor: pointer;
     border-bottom: 2px solid $green-color;
+    // background-color: $white-grey;
 }
 
 nav {
     display: flex;
-    padding: 0.3rem 1.75rem 0.3rem 0.75rem;
+    padding: 0.55rem 1.75rem 0.55rem 0.75rem;
     justify-content: space-between;
     background-color: $white-color;
     position: sticky;
     border-bottom: 1px solid $grey-color;
     top: 0;
-    margin-bottom: 1rem;
+    // margin-bottom: 1rem;
 
     .home {
         align-self: center;
     }
 
-    p{
+    p {
         @include navigation;
+        padding: 0.3rem 0.5rem 0.3rem 0.5rem;
         font-size: 1rem;
-        border-bottom: 4px solid $white-color;
+        border-radius: 0;
+        border-bottom: 2px solid $white-color;
 
     }
-    
-    p:hover{
+
+    p:hover {
         @include hover-property()
     }
 
@@ -34,5 +37,45 @@ nav {
         display: flex;
         gap: 0.7rem;
     }
+
 }
 
+details {
+    display: flex;
+    align-self: center;
+    width: max-content;
+    position: absolute;
+    left: 46.7%;
+    background-color: $white-color;
+    padding: 0.4rem;
+    top: 1%;
+}
+
+summary {
+    // display: flex;
+    // flex-direction: column-reverse;
+    font-size: 1rem;
+    font-weight: 600;
+    align-self: center;
+}
+
+a {
+    text-decoration: none;
+    color: $black-color;
+    font-weight: 600;
+}
+
+// .menu {
+//     display: none;
+// }
+
+@media screen and (max-width: 676px) {
+
+    nav {
+        p {
+            display: none;
+            // content: "hi";
+        }
+    }
+
+}

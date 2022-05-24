@@ -1,6 +1,112 @@
+@import "../../dist/globals";
+
+* {
+    background-color: $white-grey;
+}
+
+
+.bus-search-bar {
+    display: flex;
+    gap: 2.5em;
+    background-color: $light-sky-blue;
+    font-weight: 549;
+    padding: 0.8rem;
+
+    p {
+        background-color: $light-sky-blue;
+        color: $white-color;
+
+    }
+
+    .bus-values {
+        border: 1px solid $white-grey;
+        padding: 0.2rem 0.4rem 0.2rem 0.4rem;
+        background-color: $white-grey-1;
+        color: $light-navy-color;
+        width: 12rem;
+        font-size: 0.85em;
+        font-weight: 550;
+    }
+}
+
+.bus-search {
+    display: flex;
+    background-color: $light-sky-blue;
+    gap: 0.5em;
+
+    img {
+        margin-top: 1.6rem;
+        align-self: center;
+        background-color: $light-sky-blue;
+    }
+
+}
+
+button {
+    @include btn;
+    height: max-content;
+    align-self: flex-end;
+    margin-bottom: 0.25em;
+    border: none;
+    border-radius: 0;
+}
+
+button:hover {
+    cursor: pointer;
+}
 
 .buses-container {
-    padding: 1.5rem;
-    margin-left: 20%;
-    margin-right: 5%;
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem 5% 1.5rem 2%;
+
+    p {
+        padding: 1rem;
+    }
+
+    .bus-data {
+        span {
+            background-color: $white-grey;
+        }
+    }
+
+    aside {
+        padding: 1rem;
+        height: max-content;
+        background-color: $white-color;
+        font-size: 0.9em;
+        font-weight: 550;
+        border: 1px solid $grey-color;
+        margin-top: 3.75rem;
+
+        ul {
+            padding-left: 2rem;
+            background-color: $white-color;
+
+            li {
+                font-weight: 500;
+                background-color: $white-color;
+            }
+        }
+
+        p {
+            padding: 0;
+            background-color: $white-color;
+
+        }
+
+        .notice {
+            font-size: 0.8em;
+            font-weight: 600;
+            width: max-content;
+            padding: 0;
+        }
+    }
+
+    span {
+        font-weight: 600;
+        background-color: $white-color;
+    }
+
+
 }

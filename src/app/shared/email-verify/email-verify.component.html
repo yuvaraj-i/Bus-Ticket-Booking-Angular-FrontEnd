@@ -1,0 +1,14 @@
+<div class="email-container" [ngClass]="{'hide-container':status}">
+
+    <p class="header">OTP Verification</p>
+    
+    <p class="notification">We've sent a verification code to your email - {{userEmail}}</p>
+    <div class="email-input">
+        <input type="number" name="verify" required ngModel #verify = "ngModel" (input)="verifyCode(verify)">
+        <button [disabled] = "!emailDisable" (click)="resendCodeEmail()">Resend</button>
+    </div>
+    <p class="email-alert" *ngIf="verify.invalid && verify.touched">*verification code must be 4 digits only</p>
+    <button class="submit-button" [disabled] = "verify.untouched" (click)="submitVerficationCode()">Submit</button>
+</div>
+
+<pre>{{verify.invalid}} {{verify.untouched}}</pre>

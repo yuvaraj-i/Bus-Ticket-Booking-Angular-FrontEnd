@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { of } from 'rxjs';
+import { Bus } from '../core/Bus/Bus';
 import { BusService } from '../core/services/bus.service';
 
 @Component({
@@ -11,28 +13,28 @@ import { BusService } from '../core/services/bus.service';
 
 export class BusCardComponent implements OnInit {
 
-  // any[];
-
-  buses:Array<any> = [];
+  @Input() name!:string;
+  @Input() buses!:any;
 
   constructor(private busServices:BusService, private router:Router) { }
 
-  selectedBus(busId:any, indexOfBus:number){
+  selectedBus(indexOfBus:number){
     // console.log(busId);
     let bus = this.buses[indexOfBus];
     // console.log("form bus card", bus);
     this.busServices.setSelectedBus(bus);
 
-    this.router.navigate(["search/bus/seats"])
+    const selectedBus$ = of(bus);
+
+    this.busServices.setSelectedBus(selectedBus$);
+
+    this.router.navigate(["search/bus/seats/", bus.id]);
+
   }
 
 
   ngOnInit(): void {
 
-    for (let i:number = 0; i < 10; i++){
-      this.buses.push(this.busServices.getAllBusesByLocation());
-      
-    }
   }
 
 }

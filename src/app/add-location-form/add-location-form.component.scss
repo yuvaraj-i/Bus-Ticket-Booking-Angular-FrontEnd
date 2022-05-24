@@ -1,0 +1,74 @@
+@import "../../dist/globals";
+
+.heading {
+    font-size: 1.5rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2.5rem 1rem 1.2rem;
+
+    p {
+        font-size: 1.2rem; 
+        padding: 0.85rem 0 0.3rem 0;
+    }
+
+    .new-button {
+        display: flex;
+        gap: 1rem;
+        
+        .add {
+            height: max-content;
+            align-self: center;
+            background-color: $navy-light-blue;
+        }
+    }
+
+
+    .input-cards {
+        display: flex;
+        gap: 10px;
+        // height: max-content;
+
+        img {
+            align-self: center;
+        }
+
+        img:hover {
+            cursor: pointer;
+        }
+
+
+        .delete {
+            height: max-content;
+            align-self: center;
+            background-color: $red-color;
+        }
+    }
+
+
+    input {
+        padding: 0.35rem;
+        font-size: 0.87rem;
+        margin: 0.2rem;
+        margin-left: 0;
+        height: max-content;
+        align-self: center;
+    }
+
+    button {
+        padding: 0.5rem;
+        background-color: $green-color;
+        border: none;
+        color: $white-color;
+        font-weight: 500;
+        border-radius: 0.35rem;
+        border: 1px solid $white-color;
+        width: max-content;
+        font-size: 0.9rem;
+        margin: 0.7rem 0 0.7rem 0;
+    }
+}

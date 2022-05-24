@@ -1,0 +1,84 @@
+@import "../../dist/globals";
+
+p {
+    font-size: 1.5rem;
+    padding: 1rem;
+    text-align: center;
+    // width: max-content;
+}
+
+.table-container {
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+table {
+    background-color: $white-color; 
+    border-collapse: collapse;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+
+    th,
+    td {
+        border: 1px solid $grey-color;
+        text-align: center;
+        padding-top: 0.8rem;
+        padding-bottom: 0.8rem;
+    }
+
+    th {
+        background-color: $green-color;
+        color: $white-color;
+        font-weight: 500;
+    }
+    
+    td {
+        padding: 0.8rem;
+        text-align: left;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    tr:hover {
+        background-color: #ddd;
+    }
+
+    .button-action {
+        text-align: center
+    }
+
+    button {
+        @include btn;
+        background-color: $red-color;
+        border: none;
+        cursor: pointer;
+    }
+
+}
+
+
+.error {
+    font-size: 0.85rem;
+    text-align: center;
+    color: $red-color;
+    padding: 0.7rem;
+}
+
+
+
+@media screen and (max-width: 676px) {
+    .table-container {
+        height: auto;
+        width: 67%;
+        background: white;
+        overflow: scroll;
+    }
+
+    .table-container {
+        margin: 0;
+    }
+}
